@@ -1,0 +1,137 @@
+body {
+    font: 15px/1.5 Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #f7dfdd;
+}
+
+/* Global */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.blur {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    min-height: 400px;
+}
+
+.dark {
+    padding: 15px;
+    background: #0e0b16;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Header */
+header {
+    background: #0e0b16;
+    color: #ffffff;
+    padding-top: 10px;
+    min-height: 70px;
+    border-bottom: #a239ca 3px solid;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header li {
+    display: inline;
+    padding: 0 50px 0 50px;
+}
+
+header #appName {
+    float: left;
+}
+
+header #appName h1 {
+    margin: 0;
+    font-size: 50px;
+}
+
+header nav {
+    float: right;
+    margin-top: 20px;
+}
+
+header .highlight,
+header .current a {
+    color: #a239ca;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #cccccc;
+    font-weight: bold;
+}
+
+/* Welcome text */
+#welcome {
+    min-height: 400px;
+    background: url('../img/communication.jpg') no-repeat 0 -400px;
+    background-size: 85rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+#welcome h1 {
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+#welcome p {
+    font-size: 20px;
+}
+
+/* Call to Action */
+section#action{
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Footer*/
+footer {
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    background-color: #a239ca;
+    text-align: center;
+}
+
+/* Media Queries */
+@media(max-width: 768px) {
+
+    header #appName,
+    header nav,
+    header nav li,
+    #newsletter h1,
+    #newsletter form,
+    #boxes .box,
+    article#main-col,
+    aside#sidebar {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    header {
+        padding-bottom: 20px;
+    }
+
+    #welcome h1 {
+        margin-top: 40px;
+    }
+}
