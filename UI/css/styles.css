@@ -30,13 +30,46 @@ ul {
     font-weight: bold;
 }
 
-.tp50{
+.pt50{
     padding-top: 50px;
+}
+
+.pb50{
+    padding-bottom: 50px;
+}
+
+.pl50{
+    padding-left: 50px;
+}
+
+.pr50{
+    padding-right: 50px;
 }
 
 ul a:hover {
     color: #a239ca;
     font-weight: bold;
+}
+
+select{
+    border: 1px solid #a239ca;
+    border-radius: 5px;
+    font-size: 14pt;
+    width: 50%;
+}
+
+option{
+    background-color: #f7dfdd;
+}
+
+textarea{
+    border: 1px solid #a239ca;
+    border-radius: 5px;
+    font-size: 14pt;
+    width: 50%;
+    padding-left: 10px;
+    height: 200px;
+    margin:auto;
 }
 
 button {
@@ -93,7 +126,7 @@ header li {
 
 header #appName {
     float: left;
-    text-align: left;
+    text-align: center;
 }
 
 header #appName h1 {
@@ -162,7 +195,7 @@ header nav {
 .side-bar .close-btn{
     position:absolute;
     top:0;
-    right:0px;
+    right:10px;
     font-size:56px;
 }
 
@@ -209,6 +242,7 @@ form label {
 }
 
 
+
 /* Footer*/
 footer {
     padding: 20px;
@@ -220,9 +254,8 @@ footer {
 /* Media Queries */
 @media(max-width: 768px) {
 
-    header #appName {
+    header #appName, textarea {
         float: none;
-        text-align: center;
         width: 100%;
     }
 
