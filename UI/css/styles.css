@@ -102,6 +102,35 @@ section#action{
     font-size: 1rem;
 }
 
+/* Form */
+
+form input {
+    border: 1px solid #a239ca;
+    border-radius: 5px;
+    font-size: 14pt;
+    width: 50%;
+}
+
+form label {
+    width: 30%;
+    float: left;
+    text-align: right;
+    padding: 0 10px 0 10px;
+}
+
+button {
+    height: 2.5rem;
+    background: #a239ca;
+    font-size: 14pt;
+    border: 0;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+
+}
+
+
 /* Footer*/
 footer {
     padding: 20px;
@@ -116,12 +145,7 @@ footer {
 
     header #appName,
     header nav,
-    header nav li,
-    #newsletter h1,
-    #newsletter form,
-    #boxes .box,
-    article#main-col,
-    aside#sidebar {
+    header nav li, {
         float: none;
         text-align: center;
         width: 100%;
