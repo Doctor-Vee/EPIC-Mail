@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EPIC Mail | Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Crime Reporting site">
+    <meta name="keywords" content="crime report, government intervention, crime, law enforcement">
+    <meta name="author" content="Victor CHINEWUBEZE">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/styles.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../img/icon.jpg">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div id="appName">
+                <span class="open-slide">
+                    <a href="#" onclick="openSlideMenu()">
+                        <svg width="30" height="30">
+                            <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
+                            <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
+                            <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+                        </svg>
+                    </a>
+
+                </span>
+                <h1 id="epic"><span class="highlight">EPIC </span>Mail</h1>
+            </div>
+            <nav>
+                <ul>
+                    <a href="../index.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="about.html">
+                        <li>About</li>
+                    </a>
+                    <a href="adminprofile.html">
+                        <li>Profile</li>
+                    </a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <aside class="side-bar" id="side-bar">
+        <ul>
+            <a href="#" class="close-btn" onclick="closeSlideMenu()">&times;</a>
+            <a href="compose.html">
+                <li class="current">Compose</li>
+            </a>
+            <a href="inbox.html">
+                <li>Inbox</li>
+            </a>
+            <a href="sent.html">
+                <li>Sent</li>
+            </a>
+            <a href="drafts.html">
+                <li>Drafts</li>
+            </a>
+            <a href="settings.html">
+                <li>Settings</li>
+            </a>
+            <a href="#">
+                <li></li>
+            </a>
+            <a href="../index.html">
+                <li>Home</li>
+            </a>
+            <a href="about.html">
+                <li>About</li>
+            </a>
+            <a href="userprofile.html">
+                <li>Profile</li>
+            </a>
+        </ul>
+    </aside>
+
+    <section class="main container">
+        <aside class="pt50 pb50 pl50 pr50">
+            <select name="recipient" id="recipient" required>
+                <option value="" disabled selected>Select the recipient</option>
+                <option value="1">User 1</option>
+                <option value="2">User 2</option>
+                <option value="3">User 3</option>
+                <option value="4">User 4</option>
+                <option value="5">User 5</option>
+            </select>
+            <p>
+                <textarea placeholder="Your text here"> </textarea>
+            </p>
+            <button>Send</button>
+
+        </aside>
+    </section>
+    <footer>
+        <p>EPIC Mail, Copyright &copy; 2019</p>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
