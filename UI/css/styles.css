@@ -3,6 +3,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: #f7dfdd;
+    text-align: center;
 }
 
 /* Global */
@@ -23,6 +24,33 @@ ul {
     min-height: 400px;
 }
 
+.highlight,
+.current {
+    color: #a239ca;
+    font-weight: bold;
+}
+
+.tp50{
+    padding-top: 50px;
+}
+
+ul a:hover {
+    color: #a239ca;
+    font-weight: bold;
+}
+
+button {
+    height: 2.5rem;
+    background: #a239ca;
+    font-size: 14pt;
+    border: 0;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+}
+
 .dark {
     padding: 15px;
     background: #0e0b16;
@@ -33,14 +61,25 @@ ul {
 
 /* Header */
 header {
-    background: #0e0b16;
+    background-color: #0e0b16;
     color: #ffffff;
-    padding-top: 10px;
-    min-height: 70px;
+    padding: 10px 50px 0 10px;
+    height: 70px;
     border-bottom: #a239ca 3px solid;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+    margin: 0;
 }
 
-header a {
+header svg {
+    position: fixed;
+    top: 30px;
+    left: 27px;
+}
+
+header a,
+.side-bar a {
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
@@ -49,14 +88,16 @@ header a {
 
 header li {
     display: inline;
-    padding: 0 50px 0 50px;
+    padding: 0 20px 0 20px;
 }
 
 header #appName {
     float: left;
+    text-align: left;
 }
 
 header #appName h1 {
+    display: inline;
     margin: 0;
     font-size: 50px;
 }
@@ -66,16 +107,6 @@ header nav {
     margin-top: 20px;
 }
 
-header .highlight,
-header .current a {
-    color: #a239ca;
-    font-weight: bold;
-}
-
-header a:hover {
-    color: #cccccc;
-    font-weight: bold;
-}
 
 /* Welcome text */
 #welcome {
@@ -84,6 +115,7 @@ header a:hover {
     background-size: 85rem;
     text-align: center;
     color: #ffffff;
+    margin: 0;
 }
 
 #welcome h1 {
@@ -96,11 +128,60 @@ header a:hover {
     font-size: 20px;
 }
 
-/* Call to Action */
-section#action {
-    text-align: center;
-    font-size: 1rem;
+
+/* Main Body */
+
+.main {
+   padding-top: 80px;
 }
+
+#side-bar {
+    display: block;
+    position: fixed;
+    float: left;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 0;
+    height: 100vh;
+    padding-top: 60px;
+    overflow-y: hidden;
+    color: #fff;
+    margin: 0;
+    z-index: 1;
+    top:0;
+    transition: 0.5s;
+}
+
+.side-bar li {
+    border-bottom: #a239ca 1px solid;
+    min-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+}
+
+.side-bar .close-btn{
+    position:absolute;
+    top:0;
+    right:0px;
+    font-size:56px;
+}
+
+#profilePicture {
+    width: 200px;
+    height: 200px;
+    border: #a239ca 3px solid;
+    background: url('../img/PIC.jpg') no-repeat;
+    background-size: contain;
+    margin: 10px auto;
+    border-radius: 100px;
+}
+
+aside.right {
+    width: 70%;
+    display: inline;
+}
+
+
 
 /* Form */
 
@@ -115,6 +196,7 @@ form input {
     border-radius: 5px;
     font-size: 14pt;
     width: 50%;
+    padding-left: 10px;
 }
 
 form label {
@@ -122,25 +204,14 @@ form label {
     float: left;
     text-align: right;
     padding: 0 10px 0 10px;
-}
-
-button {
     height: 2.5rem;
-    background: #a239ca;
-    font-size: 14pt;
-    border: 0;
-    border-radius: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: #fff;
-
+    margin: auto 0;
 }
 
 
 /* Footer*/
 footer {
     padding: 20px;
-    margin-top: 20px;
     color: #ffffff;
     background-color: #a239ca;
     text-align: center;
@@ -149,17 +220,28 @@ footer {
 /* Media Queries */
 @media(max-width: 768px) {
 
-    header #appName,
-    header nav,
-    header nav li
-        {
+    header #appName {
         float: none;
         text-align: center;
         width: 100%;
     }
 
+
+    form input,
+    button {
+        width: 90%;
+        height: 2.5rem;
+        margin: 0;
+    }
+
     header {
         padding-bottom: 20px;
+    }
+
+    label,
+    header nav,
+    header nav li {
+        display: none;
     }
 
     #welcome h1 {

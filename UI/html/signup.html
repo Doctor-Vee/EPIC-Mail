@@ -14,42 +14,74 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div id="appName">
-                <h1><span class="highlight">EPIC </span>Mail</h1>
-            </div>
-            <nav>
+        <header>
+                <div class="container">
+                    <div id="appName">
+                        <span class="open-slide">
+                            <a href="#" onclick="openSlideMenu()">
+                                <svg width="30" height="30">
+                                    <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
+                                    <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
+                                    <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+                                </svg>
+                            </a>
+        
+                        </span>
+                        <h1 id="epic"><span class="highlight">EPIC </span>Mail</h1>
+                    </div>
+                    <nav>
+                        <ul>
+                                <a href="../index.html">
+                                    <li>Home</li>
+                                </a>
+                                <a href="about.html">
+                                    <li>About</li>
+                                </a>
+                                <a href="signin.html">
+                                    <li class="current">Sign in</li>
+                                </a>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        
+            <aside class="side-bar" id="side-bar">
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li class="current"><a href="signin.html">Login</a></li>
+                    <a href="#" class="close-btn" onclick="closeSlideMenu()">&times;</a>
+                    <a href="../index.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="about.html">
+                        <li>About</li>
+                    </a>
+                    <a href="signin.html">
+                        <li class="current">Sign in</li>
+                    </a>
                 </ul>
-            </nav>
-        </div>
-    </header>
+            </aside>
 
+<section class="main">
     <section>
-        <form class="container" method="POST">
+        <form class="container" method="POST" action="signin.html">
             <p>
                 <label for="fName">First Name:</label>
-                <input type="text" name="fName" id="fName" required>
+                <input type="text" name="fName" id="fName" placeholder="First Name" required>
             </p>
             <p>
                 <label for="lName">Last Name:</label>
-                <input type="text" name="lName" id="lName" required>
+                <input type="text" name="lName" id="lName" placeholder="Last Name" required>
             </p>
             <p>
                 <label for="eml">E-mail address:</label>
-                <input type="email" name="eml" id="eml" required>
+                <input type="email" name="eml" id="eml" placeholder="E-mail address" required>
             </p>
             <p>
                 <label for="pwd">Password:</label>
-                <input type="password" name="pwd" id="pwd" required>
+                <input type="password" name="pwd" id="pwd" placeholder="Password" required>
             </p>
             <p>
                 <label for="rPwd">Retype Password:</label>
-                <input type="password" name="rPwd" id="rPwd" required>
+                <input type="password" name="rPwd" id="rPwd" placeholder="Retype Password" required>
             </p>
    
             <button type="submit">Sign up</button>
@@ -63,13 +95,13 @@
         </div>
     </section>
 
-
-
-    <script src="main.js"></script>
+</section>
 
     <footer>
         <p>EPIC Mail, Copyright &copy; 2019</p>
     </footer>
+    
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
