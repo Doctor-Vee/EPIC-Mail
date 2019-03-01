@@ -104,6 +104,12 @@ section#action {
 
 /* Form */
 
+form {
+    display: block;
+    align-items: center;
+    padding: 30px;
+}
+
 form input {
     border: 1px solid #a239ca;
     border-radius: 5px;
