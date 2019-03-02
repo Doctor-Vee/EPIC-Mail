@@ -13,11 +13,6 @@ body {
     overflow: hidden;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-}
-
 .blur {
     background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
@@ -94,7 +89,7 @@ button {
 
 /* Header */
 header {
-    background-color:  rgba(0, 0, 0, 0.8);
+    background-color: #0e0b16;
     color: #ffffff;
     padding: 5px 50px 5px 10px;
     height: 70px;
@@ -103,6 +98,11 @@ header {
     width: 100vw;
     z-index: 1;
     margin: 0;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
 }
 
 header svg {
@@ -147,7 +147,6 @@ header nav {
 }
 
 #headerSpace{
-    width: 100vw;
     height: 70px;
     margin: 0;
     padding: 5px 50px 5px 10px;
@@ -192,7 +191,12 @@ header nav {
     transition: 0.5s;
 }
 
-.side-bar li {
+#side-bar ul {
+    margin: 0;
+    padding: 0;
+}
+
+#side-bar li {
     border-bottom: #a239ca 1px solid;
     min-height: 40px;
     text-align: center;
@@ -200,7 +204,7 @@ header nav {
     margin: auto;
 }
 
-.side-bar .close-btn{
+#side-bar .close-btn{
     position:absolute;
     top:0;
     right:10px;
@@ -217,12 +221,13 @@ header nav {
     border-radius: 100px;
 }
 
-aside.right {
-    width: 70%;
-    display: inline;
+ul#features{
+    text-align: center;
+    text-decoration: none;
+    list-style-type:none;
+    line-height: 3rem;
+    font-size: 1rem;
 }
-
-
 
 /* Form */
 
