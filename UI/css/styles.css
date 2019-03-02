@@ -79,6 +79,12 @@ button {
     padding-left: 20px;
     padding-right: 20px;
     color: #fff;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #0e0b16;
+    color: #a239ca;
 }
 
 .dark {
@@ -256,7 +262,11 @@ form label {
     margin: auto 0;
 }
 
-
+::placeholder{
+    color: #d3b0e0;
+    font-style: italic;
+    font-family: Montserrat;
+}
 
 /* Footer*/
 footer {
