@@ -27,19 +27,19 @@ body {
     font-weight: bold;
 }
 
-.pt50{
+.pt50 {
     padding-top: 50px;
 }
 
-.pb50{
+.pb50 {
     padding-bottom: 50px;
 }
 
-.pl50{
+.pl50 {
     padding-left: 50px;
 }
 
-.pr50{
+.pr50 {
     padding-right: 50px;
 }
 
@@ -48,21 +48,21 @@ ul a:hover {
     font-weight: bold;
 }
 
-select{
+select {
     border: 1px solid #a239ca;
     border-radius: 5px;
     font-size: 14pt;
     width: 50%;
 }
 
-textarea{
+textarea {
     border: 1px solid #a239ca;
     border-radius: 5px;
     font-size: 14pt;
     width: 50%;
     padding-left: 10px;
     height: 200px;
-    margin:auto;
+    margin: auto;
 }
 
 button {
@@ -78,7 +78,7 @@ button {
     cursor: pointer;
 }
 
-button:hover{
+button:hover {
     background: #0e0b16;
     color: #a239ca;
 }
@@ -115,7 +115,7 @@ header svg {
     left: 27px;
 }
 
-header #epic a{
+header #epic a {
     text-decoration: none;
     color: #ffffff;
     font-size: 2.5rem;
@@ -150,7 +150,7 @@ header nav {
     margin-top: 20px;
 }
 
-#headerSpace{
+#headerSpace {
     height: 70px;
     margin: 0;
     padding: 5px 50px 5px 10px;
@@ -191,7 +191,7 @@ header nav {
     color: #fff;
     margin: 0;
     z-index: 1;
-    top:0;
+    top: 0;
     transition: 0.5s;
 }
 
@@ -208,11 +208,11 @@ header nav {
     margin: auto;
 }
 
-#side-bar .close-btn{
-    position:absolute;
-    top:0;
-    right:10px;
-    font-size:56px;
+#side-bar .close-btn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 56px;
 }
 
 #profilePicture {
@@ -225,10 +225,10 @@ header nav {
     border-radius: 100px;
 }
 
-ul#features{
+ul#features {
     text-align: center;
     text-decoration: none;
-    list-style-type:none;
+    list-style-type: none;
     line-height: 3rem;
     font-size: 1rem;
 }
@@ -258,14 +258,35 @@ form label {
     margin: auto 0;
 }
 
-option{
+option {
     background-color: #f7dfdd;
 }
 
-::placeholder{
+::placeholder {
     color: #d3b0e0;
     font-style: italic;
     font-family: Montserrat;
+}
+
+/* Messages */
+.received {
+    text-align: left;
+    width: 80%;
+    float: left;
+    border: 0;
+    border-radius: 5px;
+    background: #fff;
+    padding: 10px;
+}
+
+.sent {
+    text-align: left;
+    width: 80%;
+    float: right;
+    border: 0;
+    background: #d3b0e0;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 /* Footer*/
@@ -279,7 +300,8 @@ footer {
 /* Media Queries */
 @media(max-width: 768px) {
 
-    header #appName, textarea {
+    header #appName,
+    textarea {
         float: none;
         width: 100%;
     }
