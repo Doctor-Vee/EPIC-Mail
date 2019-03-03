@@ -55,10 +55,6 @@ select{
     width: 50%;
 }
 
-option{
-    background-color: #f7dfdd;
-}
-
 textarea{
     border: 1px solid #a239ca;
     border-radius: 5px;
@@ -260,6 +256,10 @@ form label {
     padding: 0 10px 0 10px;
     height: 2.5rem;
     margin: auto 0;
+}
+
+option{
+    background-color: #f7dfdd;
 }
 
 ::placeholder{
