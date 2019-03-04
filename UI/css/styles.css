@@ -313,6 +313,11 @@ ul#message-list a {
     padding: 10px;
 }
 
+#messageSingle {
+width:100%;
+text-align: left;
+}
+
 /* Footer*/
 footer {
     padding: 20px;
