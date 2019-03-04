@@ -287,11 +287,11 @@ ul#message-list a {
     text-decoration: none;
 }
 
-ul#message-list .inbox-unread {
+.inbox-unread {
     background: #d3b0e0;
 }
 
-ul#message-list .inbox-read {
+.inbox-read, .sent-list {
     background: #fff;
 }
 
@@ -311,6 +311,11 @@ ul#message-list .inbox-read {
     background: #d3b0e0;
     border-radius: 5px;
     padding: 10px;
+}
+
+#messageSingle {
+width:100%;
+text-align: left;
 }
 
 /* Footer*/
