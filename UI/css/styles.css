@@ -287,11 +287,11 @@ ul#message-list a {
     text-decoration: none;
 }
 
-ul#message-list .inbox-unread {
+.inbox-unread {
     background: #d3b0e0;
 }
 
-ul#message-list .inbox-read {
+.inbox-read, .sent-list {
     background: #fff;
 }
 
