@@ -43,7 +43,7 @@ body {
     padding-right: 50px;
 }
 
-p{
+p {
     text-align: left;
 }
 
@@ -273,6 +273,28 @@ option {
 }
 
 /* Messages */
+
+ul#message-list li {
+    list-style: none;
+    border: #cccccc solid 1px;
+    margin-bottom: 5px;
+    padding: 5px;
+    text-align: left;
+    color: #0e0b16;
+}
+
+ul#message-list a {
+    text-decoration: none;
+}
+
+ul#message-list .inbox-unread {
+    background: #d3b0e0;
+}
+
+ul#message-list .inbox-read {
+    background: #fff;
+}
+
 .received {
     width: 80%;
     float: left;
