@@ -4,7 +4,9 @@
   "description": "This web app is intended to empower others by helping people exchange messages/information over the internet as a way of advancing human potential and giving back to the society",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require @babel/register ./Server/test --exit",
+    "start": "nodemon --exec babel-node app",
+    "build": "babel app.js -d build"
   },
   "repository": {
     "type": "git",
@@ -33,6 +35,7 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/register": "^7.0.0",
     "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
     "eslint": "^5.15.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
