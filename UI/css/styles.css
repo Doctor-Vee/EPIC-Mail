@@ -43,7 +43,7 @@ body {
   padding-right: 50px;
 }
 
-.center p {
+.center p, h2 {
   text-align: center;
 }
 
