@@ -325,10 +325,13 @@ text-align: left;
 
 /* Footer*/
 footer {
-    padding: 20px;
-    color: #ffffff;
-    background-color: #a239ca;
-    text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #a239ca;
+  text-align: center;
 }
 
 /* Media Queries */
