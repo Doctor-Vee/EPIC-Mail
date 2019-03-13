@@ -29,6 +29,19 @@ const MessageController = {
     });
   },
 
+  getOne(req, res) {
+    const foundMessage = MessageModel.getOne(req.params.id);
+    if (!foundMessage) {
+      return res.status(404).send({
+        status: 404,
+        error: 'Message does not exist',
+      });
+    }
+    return res.status(200).send({
+      status: 200,
+      data: foundMessage,
+    });
+  },
 };
 
 export default MessageController;
