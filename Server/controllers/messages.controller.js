@@ -21,6 +21,14 @@ const MessageController = {
     });
   },
 
+  getAll(req, res) {
+    const allMessages = MessageModel.getAll();
+    return res.status(200).send({
+      status: 200,
+      data: allMessages,
+    });
+  },
+
 };
 
 export default MessageController;
