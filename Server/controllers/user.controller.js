@@ -7,18 +7,26 @@ const UserController = {
     }
     const createdUser = UserModel.create(req.body);
     return res.status(201).send({
-      status: 'success',
+      status: 201,
       data: createdUser,
     });
   },
   login(req, res) {
     const foundUser = UserModel.login(req.body);
-    if (!foundUser) return res.status(404).send('User not found! \nTry Again');
+    if (!foundUser) {
+      return res.status(404).send({
+        status: 404,
+        error: 'User does not exist',
+      });
+    }
     if (foundUser.password !== req.body.password) {
-      return res.status(401).send('Invalid password');
+      return res.status(401).send({
+        status: 401,
+        error: 'Wrong password',
+      });
     }
     return res.status(200).send({
-      status: 'success',
+      status: 200,
       data: foundUser,
     });
   },
