@@ -4,10 +4,11 @@
   "description": "This web app is intended to empower others by helping people exchange messages/information over the internet as a way of advancing human potential and giving back to the society",
   "main": "app.js",
   "scripts": {
-    "test": "mocha --require @babel/register ./Server/test --exit",
+    "test": "nyc mocha --require @babel/register ./Server/test --exit",
     "start": "babel-node app",
     "build": "babel app.js -d build",
-    "dev": "nodemon --exec babel-node app"
+    "dev": "nodemon --exec babel-node app",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -37,10 +38,13 @@
     "@babel/register": "^7.0.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
+    "coveralls": "^3.0.3",
     "eslint": "^5.15.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
     "mocha": "^6.0.2",
-    "nodemon": "^1.18.10"
+    "mocha-lcov-reporter": "^1.3.0",
+    "nodemon": "^1.18.10",
+    "nyc": "^13.3.0"
   }
 }
