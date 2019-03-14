@@ -14,4 +14,5 @@ router.post('/messages', MessageValidator.valCreate, MessageController.create);
 router.get('/messages', MessageController.getAll);
 router.get('/messages/:id', MessageController.getOne);
 
+
 export default router;
