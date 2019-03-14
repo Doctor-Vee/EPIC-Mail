@@ -5,6 +5,18 @@ import server from '../../app';
 chai.use(chaiHttp);
 const { expect } = chai;
 
+describe('Test Server', () => {
+  it('should return display a welcome message at default route', (done) => {
+    chai
+      .request(server)
+      .get('/')
+      .end((err, res) => {
+        expect(res.status).to.eql(200);
+        done();
+      });
+  });
+});
+
 describe('Test user signup route', () => {
   it('should return 404 on wrong api call', (done) => {
     chai
