@@ -70,6 +70,15 @@ const MessageController = {
       data: foundMessage,
     });
   },
+  delete(req, res) {
+    const { id } = req.params;
+    const deletedMessage = MessageModel.delete(id);
+    if (!deletedMessage) return res.status(404).send('Not found! \nTry Again');
+    return res.status(200).send({
+      status: 'success',
+      data: deletedMessage,
+    });
+  },
 };
 
 export default MessageController;
