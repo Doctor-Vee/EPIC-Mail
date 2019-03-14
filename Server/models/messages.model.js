@@ -38,6 +38,12 @@ class Message {
     this.message = dummyDatabase.messages.find(message => message.id === parseInt(id, 10));
     return this.message;
   }
+
+  getUnread() {
+    this.message = dummyDatabase.messages.filter(message => message.status !== 'draft' && message.status !== 'read');
+    return this.message;
+  }
+
 }
 
 export default new Message();
