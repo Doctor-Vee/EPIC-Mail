@@ -48,6 +48,13 @@ class Message {
     this.message = dummyDatabase.messages.filter(message => message.status !== 'draft' && message.status !== 'read');
     return this.message;
   }
+
+  delete(id) {
+    this.message = dummyDatabase.messages.find(message => message.id === parseInt(id, 10));
+    if (!this.message) { return 0; }
+    const index = dummyDatabase.messages.indexOf(this.message);
+    return dummyDatabase.messages.splice(index, 1);
+  }
 }
 
 export default new Message();
