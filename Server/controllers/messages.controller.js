@@ -56,6 +56,20 @@ const MessageController = {
       data: foundMessage,
     });
   },
+
+  getSent(req, res) {
+    const foundMessage = MessageModel.getSent();
+    if (!foundMessage) {
+      return res.status(404).send({
+        status: 404,
+        error: 'You have no sent messages',
+      });
+    }
+    return res.status(200).send({
+      status: 200,
+      data: foundMessage,
+    });
+  },
 };
 
 export default MessageController;

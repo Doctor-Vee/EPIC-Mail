@@ -39,11 +39,15 @@ class Message {
     return this.message;
   }
 
+  getSent() {
+    this.message = dummyDatabase.messages.filter(message => message.status === 'sent');
+    return this.message;
+  }
+
   getUnread() {
     this.message = dummyDatabase.messages.filter(message => message.status !== 'draft' && message.status !== 'read');
     return this.message;
   }
-
 }
 
 export default new Message();

@@ -12,6 +12,9 @@ router.post('/auth/signup',
 router.post('/auth/login', UserController.login);
 router.post('/messages', MessageValidator.valCreate, MessageController.create);
 router.get('/messages', MessageController.getAll);
+router.get('/messages/sent', MessageController.getSent);
+router.get('/messages/unread', MessageController.getUnread);
 router.get('/messages/:id', MessageController.getOne);
+
 
 export default router;
