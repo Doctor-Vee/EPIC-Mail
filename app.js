@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  res.send('Welcome to EPIC Mail');
+  res.status(200).send('Welcome to EPIC Mail');
 });
 
 app.use('/api/v1/', routes);
