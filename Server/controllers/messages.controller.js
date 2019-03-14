@@ -42,6 +42,20 @@ const MessageController = {
       data: foundMessage,
     });
   },
+
+  getUnread(req, res) {
+    const foundMessage = MessageModel.getUnread();
+    if (!foundMessage) {
+      return res.status(404).send({
+        status: 404,
+        error: 'You have no unread messages',
+      });
+    }
+    return res.status(200).send({
+      status: 200,
+      data: foundMessage,
+    });
+  },
 };
 
 export default MessageController;
