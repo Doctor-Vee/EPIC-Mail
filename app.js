@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from 'swagger.json';
+import swaggerDocument from './swagger.json';
 
 import routes from './Server/routes/route';
 
