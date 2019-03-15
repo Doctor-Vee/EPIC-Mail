@@ -27,7 +27,6 @@ class User {
 
   login(data) {
     this.user = dummyDatabase.users.find(user => user.email === data.email);
-    console.log(this.user)
     return this.user;
 
   }
