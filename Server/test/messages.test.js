@@ -170,7 +170,7 @@ describe('Test message create route', () => {
         expect(res.status).to.eql(200);
         expect(res.body).to.deep.equal(
           {
-            status: 'success',
+            status: 200,
             data: [
               {
                 id: 1,
@@ -182,7 +182,7 @@ describe('Test message create route', () => {
                 parentMessageId: null,
                 status: 'draft',
               },
-            ]
+            ],
           },
         );
         done();

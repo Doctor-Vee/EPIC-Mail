@@ -75,9 +75,9 @@ const MessageController = {
   delete(req, res) {
     const { id } = req.params;
     const deletedMessage = MessageModel.delete(id);
-    if (!deletedMessage) return res.status(404).send('Not found! \nTry Again');
+    if (!deletedMessage) return res.status(404).send('Message does not exist');
     return res.status(200).send({
-      status: 'success',
+      status: 200,
       data: deletedMessage,
     });
   },
