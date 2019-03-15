@@ -34,6 +34,11 @@ class Message {
     return dummyDatabase.messages;
   }
 
+  getReceived() {
+    this.message = dummyDatabase.messages.filter(message => message.receiverId !== null);
+    return this.message;
+  }
+
   getOne(id) {
     this.message = dummyDatabase.messages.find(message => message.id === parseInt(id, 10));
     return this.message;
