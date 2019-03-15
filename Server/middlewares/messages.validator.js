@@ -1,5 +1,5 @@
 const MessageValidator = {
-  valCreate(req, res, next) {
+  create(req, res, next) {
     if (!req.body.subject) {
       return res.status(400).send({
         status: 400,
@@ -9,7 +9,7 @@ const MessageValidator = {
     if (!req.body.message) {
       return res.status(400).send({
         status: 400,
-        error: 'Messsage field cannot be empty',
+        error: 'Message field cannot be empty',
       });
     }
     return next();

@@ -1,14 +1,13 @@
 import express from 'express';
-// import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 
-import port from './Server/config/config';
 import routes from './Server/routes/route';
 
+dotenv.config();
 
 const app = express();
-const PORT = port || 3000;
+const PORT = process.env.PORT || 3000;
 
-// app.use('/file', express.static('./')); - use later if necessary
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
