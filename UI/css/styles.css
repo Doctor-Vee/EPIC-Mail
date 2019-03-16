@@ -48,6 +48,11 @@ body {
   text-align: center;
 }
 
+.patternless{
+  background-color: #f7dfdd;
+  box-shadow: 0 0 10px #a239ca;
+}
+
 ul a:hover {
   color: #a239ca;
   font-weight: bold;
@@ -156,7 +161,7 @@ header nav {
 /* Welcome text */
 #welcome {
   min-height: 400px;
-  background: url('../img/communication.jpg') no-repeat 0 -400px;
+  background: url('../img/communication.jpg') repeat-x 0 -400px;
   background-size: 85rem;
   text-align: center;
   color: #ffffff;
@@ -280,6 +285,18 @@ form {
  background: transparent;
 }
 
+/* Obtained from Stack overflow - https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete */
+.inputBox input:-webkit-autofill { 
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+@-webkit-keyframes autofill {
+  to {
+      color: #fff;
+      background: transparent;
+  }
+}
+
 form textarea,
 form select {
   border: 1px solid #a239ca;
@@ -399,7 +416,28 @@ footer {
     display: block;
   }
 
+  .formBox {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    width: 90%;
+    margin: auto;
+  }
+
   #welcome h1 {
     margin-top: 40px;
+  }
+}
+
+@media(min-width: 768px) {
+  #side-bar{
+    position: static;
+    width: 12%;
+    height: 120vh;
+    z-index: -1;
+  }
+  .open-slide, .close-btn, #index-side-bar {
+    display: none;
   }
 }
