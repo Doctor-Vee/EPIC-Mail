@@ -156,7 +156,7 @@ header nav {
 /* Welcome text */
 #welcome {
   min-height: 400px;
-  background: url('../img/communication.jpg') no-repeat 0 -400px;
+  background: url('../img/communication.jpg') repeat-x 0 -400px;
   background-size: 85rem;
   text-align: center;
   color: #ffffff;
