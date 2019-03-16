@@ -417,7 +417,12 @@ footer {
   }
 
   .formBox {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
     width: 90%;
+    margin: auto;
   }
 
   #welcome h1 {
