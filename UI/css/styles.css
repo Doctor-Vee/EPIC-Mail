@@ -416,7 +416,23 @@ footer {
     display: block;
   }
 
+  .formBox {
+    width: 90%;
+  }
+
   #welcome h1 {
     margin-top: 40px;
+  }
+}
+
+@media(min-width: 768px) {
+  #side-bar{
+    position: static;
+    width: 12%;
+    height: 120vh;
+    z-index: -1;
+  }
+  .open-slide, .close-btn, #index-side-bar {
+    display: none;
   }
 }
