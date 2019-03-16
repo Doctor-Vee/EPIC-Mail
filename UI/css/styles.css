@@ -285,6 +285,18 @@ form {
  background: transparent;
 }
 
+/* Obtained from Stack overflow - https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete */
+.inputBox input:-webkit-autofill { 
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+@-webkit-keyframes autofill {
+  to {
+      color: #fff;
+      background: transparent;
+  }
+}
+
 form textarea,
 form select {
   border: 1px solid #a239ca;
