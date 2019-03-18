@@ -7,9 +7,11 @@ const UserController = {
   create(req, res) {
     const createdUser = UserModel.create(req.body);
     const token = jwt.sign({ id: createdUser.id }, process.env.SECRET, { expiresIn: '1h' });
-    return res.status(201).send({
+    return res.status(201).json({
       status: 201,
-      token,
+      data: [{
+        token,
+      }],
     });
   },
   login(req, res) {
@@ -26,12 +28,15 @@ const UserController = {
         if (matches) {
           const token = jwt.sign({ id: foundUser.id, email: foundUser.email }, process.env.SECRET, { expiresIn: '1h' });
           return res.status(200).json({
-            status: 'Accepted',
-            token,
+            status: 200,
+            data: [{
+              token,
+            }],
           });
         }
         return res.status(401).json({
-          status: 'Wrong password',
+          status: 401,
+          error: 'Wrong password',
         });
       })
       .catch(error => console.log(error));

@@ -87,105 +87,76 @@ describe('Test message create route', () => {
         done();
       });
   });
-  it('should return status of 200 and return all received messages when message route is selected', (done) => {
-    chai
-      .request(server)
-      .get('/api/v1/messages')
-      .end((err, res) => {
-        expect(res.status).to.eql(200);
-        expect(res.body).to.deep.equal(
-          {
-            status: 200,
-            data: res.body.data,
-          },
-        );
-        done();
-      });
-  });
-  it('should return status of 200 and return a single received messages when the single message route is selected', (done) => {
-    const message = {
-      id: 1,
-    };
-    chai
-      .request(server)
-      .get(`/api/v1/messages/${message.id}`)
-      .end((err, res) => {
-        expect(res.status).to.eql(200);
-        expect(res.body).to.deep.equal(
-          {
-            status: 200,
-            data: {
-              id: 1,
-              senderId: null,
-              receiverId: null,
-              createdOn: 'March 15th, 2019',
-              subject: 'Hello Victor',
-              message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-              parentMessageId: null,
-              status: 'draft',
-            },
-          },
-        );
-        done();
-      });
-  });
-  it('should return status of 200 and return all unread messages when unread message route is selected', (done) => {
-    chai
-      .request(server)
-      .get('/api/v1/messages/unread')
-      .end((err, res) => {
-        expect(res.status).to.eql(200);
-        expect(res.body).to.deep.equal(
-          {
-            status: 200,
-            data: res.body.data,
-          },
-        );
-        done();
-      });
-  });
-  it('should return status of 200 and return all sent messages when sent message route is selected', (done) => {
-    chai
-      .request(server)
-      .get('/api/v1/messages/sent')
-      .end((err, res) => {
-        expect(res.status).to.eql(200);
-        expect(res.body).to.deep.equal(
-          {
-            status: 200,
-            data: res.body.data,
-          },
-        );
-        done();
-      });
-  });
-  it('should return status of 200 and return a single received messages when the single message route is selected', (done) => {
-    const message = {
-      id: 1,
-    };
-    chai
-      .request(server)
-      .delete(`/api/v1/messages/${message.id}`)
-      .end((err, res) => {
-        expect(res.status).to.eql(200);
-        expect(res.body).to.deep.equal(
-          {
-            status: 200,
-            data: [
-              {
-                id: 1,
-                senderId: null,
-                receiverId: null,
-                createdOn: 'March 15th, 2019',
-                subject: 'Hello Victor',
-                message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-                parentMessageId: null,
-                status: 'draft',
-              },
-            ],
-          },
-        );
-        done();
-      });
-  });
+  // it('should return status of 200 and return all received messages when message route is selected', (done) => {
+  //   chai
+  //     .request(server)
+  //     .get('/api/v1/messages')
+  //     .end((err, res) => {
+  //       expect(res.status).to.eql(200);
+  //       expect(res.body).to.deep.equal(
+  //         {
+  //           status: 200,
+  //           data: res.body.data,
+  //         },
+  //       );
+  //       done();
+  //     });
+  // });
+  // it('should return status of 200 and return a single received message when the single message route is selected', (done) => {
+  //   const message = {
+  //     id: 1,
+  //   };
+  //   chai
+  //     .request(server)
+  //     .get(`/api/v1/messages/${message.id}`)
+  //     .end((err, res) => {
+  //       expect(res.status).to.eql(200);
+  //       expect(res.body).to.deep.equal(
+  //         {
+  //           status: 200,
+  //           data: {
+  //             id: 1,
+  //             senderId: null,
+  //             receiverId: null,
+  //             createdOn: 'March 15th, 2019',
+  //             subject: 'Hello Victor',
+  //             message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+  //             parentMessageId: null,
+  //             status: 'draft',
+  //           },
+  //         },
+  //       );
+  //       done();
+  //     });
+  // });
+  // it('should return status of 200 and return all unread messages when unread message route is selected', (done) => {
+  //   chai
+  //     .request(server)
+  //     .get('/api/v1/messages/unread')
+  //     .end((err, res) => {
+  //       expect(res.status).to.eql(200);
+  //       expect(res.body).to.deep.equal(
+  //         {
+  //           status: 200,
+  //           data: res.body.data,
+  //         },
+  //       );
+  //       done();
+  //     });
+  // });
+  // it('should return status of 200 and return all sent messages when sent message route is selected', (done) => {
+  //   chai
+  //     .request(server)
+  //     .get('/api/v1/messages/sent')
+  //     .end((err, res) => {
+  //       expect(res.status).to.eql(200);
+  //       expect(res.body).to.deep.equal(
+  //         {
+  //           status: 200,
+  //           data: res.body.data,
+  //         },
+  //       );
+  //       done();
+  //     });
+  // });
 });
