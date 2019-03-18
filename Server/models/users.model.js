@@ -1,3 +1,4 @@
+import bcrypt from 'bcrypt';
 import dummyDatabase from '../utils/dummyDatabase';
 
 class User {
@@ -20,7 +21,7 @@ class User {
     user.email = data.email;
     user.firstName = data.firstName;
     user.lastName = data.lastName;
-    user.password = data.password;
+    user.password = bcrypt.hashSync(data.password, 10);
     dummyDatabase.users.push(user);
     return user;
   }
