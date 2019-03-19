@@ -168,29 +168,29 @@ describe('Test user signup route', () => {
         done();
       });
   });
-//   it('should create user and return 201 if all details were entered properly', (done) => {
-//     const user = {
-//       firstName: 'Victor',
-//       lastName: 'Valdes',
-//       email: 'footballer@epicmail.com',
-//       password: 'safe234',
-//     };
-//     chai
-//       .request(server)
-//       .post('/api/v1/auth/signup')
-//       .send(user)
-//       .end((err, res) => {
-//         expect(res.status).to.eql(201);
-//         expect(res.body).to.deep.equal(
-//           {
-//             status: 201,
-//             data: res.body.data,
-//           },
-//         );
-//         done();
-//       });
-//   });
-// });
+  it('should create user and return 201 if all details were entered properly', (done) => {
+    const user = {
+      firstName: 'Victor',
+      lastName: 'Valdes',
+      email: 'footballer@epicmail.com',
+      password: 'safe234',
+    };
+    chai
+      .request(server)
+      .post('/api/v1/auth/signup')
+      .send(user)
+      .end((err, res) => {
+        expect(res.status).to.eql(201);
+        expect(res.body).to.deep.equal(
+          {
+            status: 201,
+            data: res.body.data,
+          },
+        );
+        done();
+      });
+  });
+});
 
 describe('Test user login route', () => {
   it('should return an error if the email is blank', (done) => {
