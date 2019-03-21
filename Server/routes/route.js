@@ -11,10 +11,10 @@ router.post('/auth/signup', UserValidator.create, UserController.create);
 router.post('/auth/login', UserValidator.login, UserController.login);
 router.post('/messages', MessageValidator.create, MessageController.create);
 router.get('/messages/all', MessageController.getAll);
-router.get('/messages', auth, MessageController.getReceived);
-router.get('/messages/sent', auth, MessageController.getSent);
-router.get('/messages/unread', auth, MessageController.getUnread);
-router.get('/messages/:id', auth, MessageController.getOne);
-router.delete('/messages/:id', auth, MessageController.delete);
+router.get('/messages/:id/inbox', MessageController.getInbox);
+router.get('/messages/:id/sent', MessageController.getSent);
+router.get('/messages/:id/unread', MessageController.getUnread);
+router.get('/messages/:id', MessageController.getOne);
+router.delete('/messages/:id', MessageController.delete);
 
 export default router;
