@@ -7,7 +7,8 @@
     "test": "nyc mocha --require @babel/register ./Server/test --exit",
     "start": "babel-node app",
     "build": "babel app.js -d build",
-    "db-migrate": "babel-node Server/models/index",
+    "db-migrate": "babel-node ./Server/models/index",
+    "db-populate": "babel-node ./Server/seeds/index.seeds",
     "dev": "nodemon --exec babel-node app",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
