@@ -39,10 +39,12 @@ const createUser = `
 
 const createMessage = `
   INSERT INTO messages(sender_id,
+    receiver_id,
     subject,
     message,
     status)
   VALUES('1',
+    '2',
     'Hello Victor',
     'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
     'sent')
@@ -57,10 +59,12 @@ const createMessage = `
   RETURNING *;
 
   INSERT INTO messages(sender_id,
+    receiver_id,
     subject,
     message,
     status)
   VALUES('2',
+    '1',
     'Charamie Designs',
     'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book',
     'read')
