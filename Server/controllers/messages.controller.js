@@ -1,12 +1,19 @@
-import MessageModel from '../models/messages.model';
+import pool from '../models/db';
 
 const MessageController = {
   create(req, res) {
-    const createdMessage = MessageModel.create(req.body);
-    return res.status(201).send({
-      status: 201,
-      data: createdMessage,
-    });
+    const message = req.body;
+    let createdMessage;
+    const postQuery = `INSERT INTO messages (sender_id, subject, message) 
+      VALUES($1, $2, $3) RETURNING *; `;
+    pool.query(postQuery, [message.senderId, message.subject, message.message])
+      .then((results) => {
+        [createdMessage] = results.rows;
+        return res.status(201).json({
+          status: 201,
+          data: createdMessage,
+        });
+      });
   },
 
   getAll(req, res) {
@@ -72,6 +79,7 @@ const MessageController = {
       data: foundMessage,
     });
   },
+
   delete(req, res) {
     const { id } = req.params;
     const deletedMessage = MessageModel.delete(id);
