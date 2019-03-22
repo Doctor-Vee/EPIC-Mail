@@ -2,6 +2,7 @@ import { Router } from 'express';
 import UserController from '../controllers/users.controller';
 import MessageController from '../controllers/messages.controller';
 import GroupController from '../controllers/groups.controllers';
+import GroupMemberController from '../controllers/groupmembers.controllers';
 import UserValidator from '../middlewares/users.validator';
 import MessageValidator from '../middlewares/messages.validator';
 import GroupValidator from '../middlewares/groups.validator';
@@ -21,5 +22,7 @@ router.delete('/messages/:id', MessageController.delete);
 router.post('/groups', GroupValidator.create, GroupController.create);
 router.get('/groups', GroupController.getAll);
 router.delete('/groups/:id', GroupController.delete);
+router.post('/groupmembers', GroupMemberController.create);
+router.delete('/groupmembers/:id', GroupMemberController.delete);
 
 export default router;
