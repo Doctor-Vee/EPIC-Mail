@@ -4,11 +4,11 @@ const createUsers = `
     last_name,
     password,
     phone_number)
-  VALUES('oluvic@gmail.com',
+  VALUES('osc@gmail.com',
     'Victor',
     'Oluchukwu',
     'password',
-    '08085492459')
+    '08022222222')
   RETURNING *;
   
   INSERT INTO users(email,
@@ -16,11 +16,11 @@ const createUsers = `
     last_name,
     password,
     phone_number)
-  VALUES('drvee@epicmail.com',
+  VALUES('dpo@epicmail.com',
     'Doctor',
     'Vee',
     '***********',
-    '09053969127')
+    '09034345726')
   RETURNING *;
 
   INSERT INTO users(email,
@@ -28,11 +28,11 @@ const createUsers = `
     last_name,
     password,
     phone_number)
-  VALUES('chidinma@gmail.com',
+  VALUES('coo@gmail.com',
     'Chidinma',
     'Nsoedo',
     'charamie',
-    '08081234567')
+    '08084141444')
   RETURNING *;
 `;
 

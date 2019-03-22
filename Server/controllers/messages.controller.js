@@ -4,9 +4,9 @@ const MessageController = {
   create(req, res) {
     const message = req.body;
     let createdMessage;
-    const postQuery = `INSERT INTO messages (sender_id, subject, message) 
-      VALUES($1, $2, $3) RETURNING *; `;
-    pool.query(postQuery, [message.senderId, message.subject, message.message])
+    const postQuery = `INSERT INTO messages (sender_id, subject, message, receiver_id) 
+      VALUES($1, $2, $3, $4) RETURNING *; `;
+    pool.query(postQuery, [message.senderId, message.subject, message.message, message.receiverId])
       .then((results) => {
         [createdMessage] = results.rows;
         return res.status(201).json({
