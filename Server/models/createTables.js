@@ -25,35 +25,26 @@ const createMessagesTable = `
   );
 `;
 
-const createInboxTable = `
-CREATE TABLE IF NOT EXISTS inbox(
-  id SERIAL PRIMARY KEY NOT NULL,
-  sender_id INTEGER NOT NULL,
-  parent_message_id INTEGER,
-  subject VARCHAR(100) UNIQUE NOT NULL,
-  message TEXT NOT NULL,
-  created_on TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  updated TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  FOREIGN KEY (sender_id) REFERENCES users (id) ON DELETE CASCADE
-);
-`;
-
 const createGroupsTable = `
 CREATE TABLE IF NOT EXISTS groups(
   id SERIAL PRIMARY KEY NOT NULL,
-  name VARCHAR(30) NOT NULL
+  name VARCHAR(30) NOT NULL,
+  description VARCHAR(255)
 );
 `;
 
 const createGroupMembersTable = `
-CREATE TABLE IF NOT EXISTS group_members(
-  id SERIAL PRIMARY KEY NOT NULL,
-  member_id INTEGER NOT NULL,
-  FOREIGN KEY (member_id) REFERENCES users (id) ON DELETE CASCADE
+CREATE TABLE IF NOT EXISTS all_group_members(
+  member_id SERIAL PRIMARY KEY NOT NULL,
+  group_id INTEGER NOT NULL,
+  email VARCHAR(50) UNIQUE NOT NULL,
+  first_name VARCHAR (30) NOT NULL,
+  last_name VARCHAR (30) NOT NULL,
+  role VARCHAR(6) DEFAULT 'member'
 );
 `;
 
-const createQuery = `${createUsersTable}${createMessagesTable}${createInboxTable}${createGroupsTable}${createGroupMembersTable}`;
+const createQuery = `${createUsersTable}${createMessagesTable}${createGroupsTable}${createGroupMembersTable}`;
 
 console.log('Done creating tables');
 export default createQuery;
