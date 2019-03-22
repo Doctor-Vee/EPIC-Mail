@@ -48,6 +48,18 @@ const UserValidator = {
         error: 'Password must not be less than 6 characters',
       });
     }
+    if (!req.body.phoneNumber) {
+      return res.status(400).send({
+        status: 400,
+        error: 'Phone Number is required',
+      });
+    }
+    if (!/^[0-9]+$/.test(req.body.phoneNumber)) {
+      return res.status(400).send({
+        status: 400,
+        error: 'Phone Number can only contain numbers',
+      });
+    }
     return next();
   },
   login(req, res, next) {
