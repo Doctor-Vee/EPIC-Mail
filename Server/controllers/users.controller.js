@@ -31,9 +31,9 @@ const UserController = {
         return err;
       }
       if (!data.rows[0]) {
-        return res.status(404).send({
-          status: 404,
-          error: 'User does not exist',
+        return res.status(401).send({
+          status: 401,
+          error: 'Invalid login details',
         });
       }
 
@@ -51,7 +51,7 @@ const UserController = {
           }
           return res.status(401).json({
             status: 401,
-            error: 'Wrong password',
+            error: 'Invalid login details',
           });
         });
     });
