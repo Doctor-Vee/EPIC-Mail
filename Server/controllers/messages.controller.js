@@ -16,20 +16,6 @@ const MessageController = {
       });
   },
 
-  getAll(req, res) {
-    const query = 'SELECT * FROM messages';
-    pool.query(query, (err, data) => {
-      if (err) {
-        return err;
-      }
-      const allMessages = data.rows;
-      return res.status(200).send({
-        status: 200,
-        data: allMessages,
-      });
-    });
-  },
-
   getInbox(req, res) {
     const { id } = req.params;
     const query = `SELECT id, sender_id, subject, message, receiver_id FROM messages WHERE receiver_id = ${id};`;
