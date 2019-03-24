@@ -14,7 +14,6 @@ const router = Router();
 router.post('/auth/signup', UserValidator.create, UserController.create);
 router.post('/auth/login', UserValidator.login, UserController.login);
 router.post('/messages', MessageValidator.create, MessageController.create);
-router.get('/messages/all', MessageController.getAll);
 router.get('/messages/:id/inbox', RouteValidator.id, MessageController.getInbox);
 router.get('/messages/:id/sent', RouteValidator.id, MessageController.getSent);
 router.get('/messages/:id/unread', RouteValidator.id, MessageController.getUnread);

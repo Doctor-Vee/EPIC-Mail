@@ -23,6 +23,7 @@ describe('Test user signup route', () => {
       lastName: 'Valdes',
       email: 'footballer@epicmail.com',
       password: 'safe32',
+      phoneNumber: '08033332121',
     };
     chai
       .request(server)
@@ -40,6 +41,7 @@ describe('Test user signup route', () => {
       lastName: '',
       email: 'footballer@epicmail.com',
       password: 'safe32',
+      phoneNumber: '08033332121',
     };
     chai
       .request(server)
@@ -57,6 +59,7 @@ describe('Test user signup route', () => {
       lastName: 'Valdes',
       email: 'footballer@epicmail.com',
       password: 'safe32',
+      phoneNumber: '08033332121',
     };
     chai
       .request(server)
@@ -74,6 +77,7 @@ describe('Test user signup route', () => {
       lastName: 'V',
       email: 'footballer@epicmail.com',
       password: 'safe32',
+      phoneNumber: '08033332121',
     };
     chai
       .request(server)
@@ -91,6 +95,7 @@ describe('Test user signup route', () => {
       lastName: 'Valdes',
       email: '',
       password: 'safe32',
+      phoneNumber: '08033332121',
     };
     chai
       .request(server)
@@ -108,6 +113,7 @@ describe('Test user signup route', () => {
       lastName: 'Valdes',
       email: 'foot@baller@epicmail.com',
       password: 'safe32',
+      phoneNumber: '08033332121',
     };
     chai
       .request(server)
@@ -125,6 +131,7 @@ describe('Test user signup route', () => {
       lastName: 'Valdes',
       email: 'footballer@epicmail.com',
       password: '',
+      phoneNumber: '08033332121',
     };
     chai
       .request(server)
@@ -142,6 +149,7 @@ describe('Test user signup route', () => {
       lastName: 'Valdes',
       email: 'footballer@epicmail.com',
       password: 'safe2',
+      phoneNumber: '08033332121',
     };
     chai
       .request(server)
@@ -150,6 +158,42 @@ describe('Test user signup route', () => {
       .end((err, res) => {
         expect(res.status).to.eql(400);
         expect(res.body).to.have.property('error').to.equal('Password must not be less than 6 characters');
+        done();
+      });
+  });
+  it('should return an error if the phone number is blank', (done) => {
+    const user = {
+      firstName: 'Victor',
+      lastName: 'Valdes',
+      email: 'footballer@epicmail.com',
+      password: 'safe32',
+      phoneNumber: '',
+    };
+    chai
+      .request(server)
+      .post('/api/v1/auth/signup')
+      .send(user)
+      .end((err, res) => {
+        expect(res.status).to.eql(400);
+        expect(res.body.error).to.eql('Phone Number is required');
+        done();
+      });
+  });
+  it('should return an error if the phone contains non alphabets', (done) => {
+    const user = {
+      firstName: 'Victor',
+      lastName: 'Valdes',
+      email: 'footballer@epicmail.com',
+      password: 'safe32',
+      phoneNumber: '08033ads332121',
+    };
+    chai
+      .request(server)
+      .post('/api/v1/auth/signup')
+      .send(user)
+      .end((err, res) => {
+        expect(res.status).to.eql(400);
+        expect(res.body).to.have.property('error').to.equal('Phone Number can only contain numbers');
         done();
       });
   });
