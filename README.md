@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/Victor-Chinewubeze/EPIC-Mail.svg?branch=develop)](https://travis-ci.org/Victor-Chinewubeze/EPIC-Mail)
 [![Coverage Status](https://coveralls.io/repos/github/Victor-Chinewubeze/EPIC-Mail/badge.svg?branch=develop)](https://coveralls.io/github/Victor-Chinewubeze/EPIC-Mail?branch=develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/576f65b6df19e0a1f648/maintainability)](https://codeclimate.com/github/Victor-Chinewubeze/EPIC-Mail/maintainability)
 
 # EPIC-Mail
 ## Description
