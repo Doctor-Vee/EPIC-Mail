@@ -11,8 +11,8 @@ import auth from '../middlewares/auth';
 
 const router = Router();
 
-router.post('/auth/signup', UserValidator.create, UserController.create);
-router.post('/auth/login', UserValidator.login, UserController.login);
+router.post('/auth/signup', auth, UserValidator.create, UserController.create);
+router.post('/auth/login', auth, UserValidator.login, UserController.login);
 router.post('/messages', MessageValidator.create, MessageController.create);
 router.get('/messages/:id/inbox', RouteValidator.id, MessageController.getInbox);
 router.get('/messages/:id/sent', RouteValidator.id, MessageController.getSent);
